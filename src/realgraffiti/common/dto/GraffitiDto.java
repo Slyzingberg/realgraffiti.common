@@ -6,18 +6,27 @@ import javax.jdo.annotations.*;
 public class GraffitiDto {
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	private Long key;
+	private Long _key;
 	
-	@NotPersistent
+	@Persistent
 	private GraffitiLocationParametersDto _GraffitiLocationParameters;
 	
 	// blob id or something like that
 	@Persistent
-	private String imageKey;
-	
+	private String _imageKey;
+
+	@NotPersistent
+	private byte[] _imageData;
+
 	public GraffitiDto(GraffitiLocationParametersDto graffitiLocationParameters, String imageKey) {
-		this._GraffitiLocationParameters = graffitiLocationParameters;
-		this.imageKey = imageKey;
+		_GraffitiLocationParameters = graffitiLocationParameters;
+		_imageKey = imageKey;
+	}
+	
+	public GraffitiDto(GraffitiLocationParametersDto graffitiLocationParameters, String imageKey, byte[] imageData) {
+		_GraffitiLocationParameters = graffitiLocationParameters;
+		_imageKey = imageKey;
+		_imageData = imageData;
 	}
 	
 	public GraffitiLocationParametersDto getDescriptorsVector() {
@@ -29,14 +38,22 @@ public class GraffitiDto {
 	}
 
 	public String getImageKey() {
-		return imageKey;
+		return _imageKey;
 	}
 
 	public void setImage(String imageKey) {
-		this.imageKey = imageKey;
+		this._imageKey = imageKey;
 	}
 
 	public Long getKey() {
-		return key;
+		return _key;
+	}
+	
+	public byte[] get_imageData() {
+		return _imageData;
+	}
+
+	public void set_imageData(byte[] _imageData) {
+		this._imageData = _imageData;
 	}
 }
