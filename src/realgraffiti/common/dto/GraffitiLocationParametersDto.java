@@ -5,12 +5,20 @@ import java.util.*;
 import javax.jdo.annotations.*;
 
 @PersistenceCapable
+@EmbeddedOnly
 public class GraffitiLocationParametersDto {
-	private String _coordinates;
-	private double _angle;
-	private Collection<Double> _siftDescriptors;
+
 	
-	public GraffitiLocationParametersDto(String coordinates, double angle, Collection<Double> siftDescriptors){
+	@Persistent
+	private String _coordinates;
+	
+	@Persistent
+	private double _angle;
+	
+	@Persistent
+	private List<Double> _siftDescriptors;
+	
+	public GraffitiLocationParametersDto(String coordinates, double angle, List<Double> siftDescriptors){
 		_coordinates = coordinates;
 		_angle = angle;
 		_siftDescriptors = siftDescriptors;
