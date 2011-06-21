@@ -18,6 +18,10 @@ public class GraffitiDto {
 	@NotPersistent
 	private byte[] _imageData;
 
+	public GraffitiDto(){
+	
+	}
+	
 	public GraffitiDto(GraffitiLocationParametersDto graffitiLocationParameters, String imageKey) {
 		_graffitiLocationParameters = graffitiLocationParameters;
 		_imageKey = imageKey;
