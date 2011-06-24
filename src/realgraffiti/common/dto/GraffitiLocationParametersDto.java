@@ -28,4 +28,8 @@ public class GraffitiLocationParametersDto {
 		_angle = angle;
 		_siftDescriptors = siftDescriptors;
 	}
+	
+	public String toString(){
+		return _coordinates;
+	}
 }

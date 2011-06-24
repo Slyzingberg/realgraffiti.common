@@ -37,11 +37,11 @@ public class GraffitiDto {
 		_graffitiLocationParameters = glp;
 	}
 
-	public GraffitiLocationParametersDto getDescriptorsVector() {
+	public GraffitiLocationParametersDto getLocationParameters() {
 		return _graffitiLocationParameters;
 	}
 
-	public void setDescriptorsVector(GraffitiLocationParametersDto descriptorsVector) {
+	public void setLocationParameters(GraffitiLocationParametersDto descriptorsVector) {
 		this._graffitiLocationParameters = descriptorsVector;
 	}
 
@@ -63,5 +63,9 @@ public class GraffitiDto {
 
 	public void set_imageData(byte[] _imageData) {
 		this._imageData = _imageData;
+	}
+	
+	public String toString(){
+		return getLocationParameters().toString();
 	}
 }
