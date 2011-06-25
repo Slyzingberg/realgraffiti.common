@@ -53,6 +53,10 @@ public class GraffitiDto {
 		this._imageKey = imageKey;
 	}
 
+	public void setKey(Long key){
+		_key = key;
+	}
+	
 	public Long getKey() {
 		return _key;
 	}
