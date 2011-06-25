@@ -66,6 +66,6 @@ public class GraffitiDto {
 	}
 	
 	public String toString(){
-		return getLocationParameters().toString();
+		return getKey().toString();
 	}
 }

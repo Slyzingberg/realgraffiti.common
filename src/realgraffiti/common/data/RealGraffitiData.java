@@ -8,4 +8,5 @@ import realgraffiti.common.dto.GraffitiLocationParametersDto;
 public interface RealGraffitiData {
 	boolean addNewGraffiti(GraffitiDto GraffitiDto);
 	Collection<GraffitiDto> getNearByGraffiti(GraffitiLocationParametersDto graffitiLocationParameters);
+	byte[] getGraffitiImage(Long graffitiKey);
 }
