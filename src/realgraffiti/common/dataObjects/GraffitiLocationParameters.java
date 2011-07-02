@@ -29,7 +29,32 @@ public class GraffitiLocationParameters {
 		_siftDescriptors = siftDescriptors;
 	}
 	
+	
 	public String toString(){
 		return _coordinates.toString();
+	}
+
+	public Coordinates getCoordinates() {
+		return _coordinates;
+	}
+
+	public void setCoordinates(Coordinates _coordinates) {
+		this._coordinates = _coordinates;
+	}
+
+	public double getAngle() {
+		return _angle;
+	}
+
+	public void setAngle(double _angle) {
+		this._angle = _angle;
+	}
+
+	public List<Double> getSiftDescriptors() {
+		return _siftDescriptors;
+	}
+
+	public void setSiftDescriptors(List<Double> _siftDescriptors) {
+		this._siftDescriptors = _siftDescriptors;
 	}
 }
