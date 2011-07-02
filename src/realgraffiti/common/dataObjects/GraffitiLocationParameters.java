@@ -11,7 +11,7 @@ public class GraffitiLocationParameters {
 
 	
 	@Persistent
-	private String _coordinates;
+	private Coordinates _coordinates;
 	
 	@Persistent
 	private double _angle;
@@ -23,13 +23,13 @@ public class GraffitiLocationParameters {
 		_siftDescriptors = new ArrayList<Double>();
 	}
 	
-	public GraffitiLocationParameters(String coordinates, double angle, List<Double> siftDescriptors){
+	public GraffitiLocationParameters(Coordinates coordinates, double angle, List<Double> siftDescriptors){
 		_coordinates = coordinates;
 		_angle = angle;
 		_siftDescriptors = siftDescriptors;
 	}
 	
 	public String toString(){
-		return _coordinates;
+		return _coordinates.toString();
 	}
 }
