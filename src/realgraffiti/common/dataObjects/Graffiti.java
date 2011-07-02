@@ -1,47 +1,47 @@
-package realgraffiti.common.dto;
+package realgraffiti.common.dataObjects;
 import javax.jdo.annotations.*;
 
 
 @PersistenceCapable
-public class GraffitiDto {
+public class Graffiti {
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	private Long _key;
 	
 	@Persistent
-	private GraffitiLocationParametersDto _graffitiLocationParameters;
+	private GraffitiLocationParameters _graffitiLocationParameters;
 	
 	// blob id or something like that
-	@Persistent
+	@NotPersistent
 	private String _imageKey;
 
 	@NotPersistent
 	private byte[] _imageData;
 
-	public GraffitiDto(){
+	public Graffiti(){
 	
 	}
 	
-	public GraffitiDto(GraffitiLocationParametersDto graffitiLocationParameters, String imageKey) {
+	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, String imageKey) {
 		_graffitiLocationParameters = graffitiLocationParameters;
 		_imageKey = imageKey;
 	}
 	
-	public GraffitiDto(GraffitiLocationParametersDto graffitiLocationParameters, String imageKey, byte[] imageData) {
+	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, String imageKey, byte[] imageData) {
 		_graffitiLocationParameters = graffitiLocationParameters;
 		_imageKey = imageKey;
 		_imageData = imageData;
 	}
 	
-	public GraffitiDto(GraffitiLocationParametersDto glp) {
+	public Graffiti(GraffitiLocationParameters glp) {
 		_graffitiLocationParameters = glp;
 	}
 
-	public GraffitiLocationParametersDto getLocationParameters() {
+	public GraffitiLocationParameters getLocationParameters() {
 		return _graffitiLocationParameters;
 	}
 
-	public void setLocationParameters(GraffitiLocationParametersDto descriptorsVector) {
+	public void setLocationParameters(GraffitiLocationParameters descriptorsVector) {
 		this._graffitiLocationParameters = descriptorsVector;
 	}
 

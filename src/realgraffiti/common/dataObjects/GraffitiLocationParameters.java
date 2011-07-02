@@ -1,4 +1,4 @@
-package realgraffiti.common.dto;
+package realgraffiti.common.dataObjects;
 
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -7,7 +7,7 @@ import javax.jdo.annotations.*;
 
 @PersistenceCapable
 @EmbeddedOnly
-public class GraffitiLocationParametersDto {
+public class GraffitiLocationParameters {
 
 	
 	@Persistent
@@ -19,11 +19,11 @@ public class GraffitiLocationParametersDto {
 	@Persistent
 	private List<Double> _siftDescriptors;
 	
-	public GraffitiLocationParametersDto(){
+	public GraffitiLocationParameters(){
 		_siftDescriptors = new ArrayList<Double>();
 	}
 	
-	public GraffitiLocationParametersDto(String coordinates, double angle, List<Double> siftDescriptors){
+	public GraffitiLocationParameters(String coordinates, double angle, List<Double> siftDescriptors){
 		_coordinates = coordinates;
 		_angle = angle;
 		_siftDescriptors = siftDescriptors;

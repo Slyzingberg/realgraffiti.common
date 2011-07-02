@@ -1,12 +1,13 @@
 package realgraffiti.common.data;
 
 import java.util.Collection;
-import realgraffiti.common.dto.GraffitiDto;
-import realgraffiti.common.dto.GraffitiLocationParametersDto;
+
+import realgraffiti.common.dataObjects.Graffiti;
+import realgraffiti.common.dataObjects.GraffitiLocationParameters;
 
 
 public interface RealGraffitiData {
-	boolean addNewGraffiti(GraffitiDto GraffitiDto);
-	Collection<GraffitiDto> getNearByGraffiti(GraffitiLocationParametersDto graffitiLocationParameters);
+	boolean addNewGraffiti(Graffiti GraffitiDto);
+	Collection<Graffiti> getNearByGraffiti(GraffitiLocationParameters graffitiLocationParameters);
 	byte[] getGraffitiImage(Long graffitiKey);
 }
