@@ -72,4 +72,8 @@ public class Graffiti {
 	public String toString(){
 		return getKey().toString();
 	}
+	
+	public boolean equals(Graffiti other){
+		return _key == other._key;
+	}
 }
