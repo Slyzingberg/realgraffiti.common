@@ -8,17 +8,17 @@ import javax.jdo.annotations.Persistent;
 @EmbeddedOnly
 public class Coordinates {
 	@Persistent
-	private int _latitude;
+	private double _latitude;
 	@Persistent
-	private int _longitude;
+	private double _longitude;
 	
 	
-	public Coordinates(int _latitude, int _longitude) {
-		this._latitude = _latitude;
-		this._longitude = _longitude;
+	public Coordinates(double myLatitude, double myLongitude) {
+		this._latitude = myLatitude;
+		this._longitude = myLongitude;
 	}
 	
-	public int getLatitude() {
+	public double getLatitude() {
 		return _latitude;
 	}
 	
@@ -26,7 +26,7 @@ public class Coordinates {
 		this._latitude = _latitude;
 	}
 	
-	public int getLongitude() {
+	public double getLongitude() {
 		return _longitude;
 	}
 	
