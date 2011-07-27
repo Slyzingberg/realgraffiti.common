@@ -12,7 +12,6 @@ public class Coordinates {
 	@Persistent
 	private int _longitude;
 	
-	
 	public Coordinates(int _latitude, int _longitude) {
 		this._latitude = _latitude;
 		this._longitude = _longitude;
