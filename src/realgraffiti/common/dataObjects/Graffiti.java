@@ -11,10 +11,6 @@ public class Graffiti {
 	@Persistent
 	private GraffitiLocationParameters _graffitiLocationParameters;
 	
-	// blob id or something like that
-	@NotPersistent
-	private String _imageKey;
-
 	@NotPersistent
 	private byte[] _imageData;
 
@@ -24,12 +20,10 @@ public class Graffiti {
 	
 	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, String imageKey) {
 		_graffitiLocationParameters = graffitiLocationParameters;
-		_imageKey = imageKey;
 	}
 	
-	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, String imageKey, byte[] imageData) {
+	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, byte[] imageData) {
 		_graffitiLocationParameters = graffitiLocationParameters;
-		_imageKey = imageKey;
 		_imageData = imageData;
 	}
 	
@@ -45,14 +39,6 @@ public class Graffiti {
 		this._graffitiLocationParameters = descriptorsVector;
 	}
 
-	public String getImageKey() {
-		return _imageKey;
-	}
-
-	public void setImage(String imageKey) {
-		this._imageKey = imageKey;
-	}
-
 	public void setKey(Long key){
 		_key = key;
 	}
@@ -61,12 +47,12 @@ public class Graffiti {
 		return _key;
 	}
 	
-	public byte[] get_imageData() {
+	public byte[] getImageData() {
 		return _imageData;
 	}
 
-	public void set_imageData(byte[] _imageData) {
-		this._imageData = _imageData;
+	public void setImageData(byte[] imageData) {
+		this._imageData = imageData;
 	}
 	
 	public String toString(){

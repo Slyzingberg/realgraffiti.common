@@ -1,7 +1,6 @@
 package realgraffiti.common.dataObjects;
 
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import javax.jdo.annotations.*;
 
