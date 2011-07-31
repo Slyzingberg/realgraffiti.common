@@ -16,6 +16,17 @@ public class GraffitiLocationParameters {
 	private double _angle;
 	
 	@Persistent
+	private Orientation _orientation;
+	
+	public Orientation get_orientation() {
+		return _orientation;
+	}
+
+	public void set_orientation(Orientation _orientation) {
+		this._orientation = _orientation;
+	}
+
+	@Persistent
 	private List<Double> _siftDescriptors;
 	
 	public GraffitiLocationParameters(){
