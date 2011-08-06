@@ -1,13 +1,22 @@
 package realgraffiti.common.dataObjects;
 
 import java.util.Arrays;
+
+import javax.jdo.annotations.EmbeddedOnly;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 /**
  * Orientation has 3 axis. The main one is the X
  * @author Rappoport
  *
  */
+
+@PersistenceCapable
+@EmbeddedOnly
 public class Orientation {
+	@Persistent
 	private float[] _orientation;
+	
 	public Orientation(float[] orientation){
 		_orientation = orientation;
 	}
