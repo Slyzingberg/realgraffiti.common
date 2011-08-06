@@ -18,17 +18,17 @@ public class GraffitiLocationParameters {
 	@Persistent
 	private Orientation _orientation;
 	
-	public Orientation get_orientation() {
-		return _orientation;
-	}
-
-	public void set_orientation(Orientation _orientation) {
-		this._orientation = _orientation;
-	}
-
 	@Persistent
 	private List<Double> _siftDescriptors;
 	
+	public Orientation getOrientation() {
+		return _orientation;
+	}
+
+	public void setOrientation(Orientation orientation) {
+		this._orientation = orientation;
+	}
+
 	public GraffitiLocationParameters(){
 		_siftDescriptors = new ArrayList<Double>();
 	}
