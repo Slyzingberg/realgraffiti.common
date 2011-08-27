@@ -15,31 +15,34 @@ import javax.jdo.annotations.Persistent;
 @EmbeddedOnly
 public class Orientation {
 	@Persistent
-	private float[] _orientation;
+	private float _Xorientation;
+	@Persistent
+	private float _Yorientation;
+	@Persistent
+	private float _Zorientation;
 	
 	public Orientation(float[] orientation){
-		_orientation = orientation;
+		_Xorientation = orientation[0];
+		_Yorientation = orientation[1];
+		_Zorientation = orientation[2];
 	}
-	public float[] get_orientation() {
-		return _orientation;
+	public float[] getOrientation() {
+		return new float[]{_Xorientation, _Yorientation, _Zorientation};
 	}
 
-	public float get_Xorientation() {
-		return _orientation[0];
+	public float getXorientation() {
+		return _Xorientation;
 	}
-	public float get_Yorientation() {
-		return _orientation[1];
+	public float getYorientation() {
+		return _Yorientation;
 	}
 	public float get_Zorientation() {
-		return _orientation[2];
-	}
-	public void set_orientation(float[] _orientation) {
-		this._orientation = _orientation;
+		return _Zorientation;
 	}
 
 	@Override
 	public String toString() {
-		return "Orientation [_orientation=" + Arrays.toString(_orientation)
+		return "Orientation [_orientation=" + Arrays.toString(getOrientation())
 				+ "]";
 	}	
 }

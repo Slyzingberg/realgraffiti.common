@@ -13,13 +13,26 @@ public class GraffitiLocationParameters {
 	private Coordinates _coordinates;
 	
 	@Persistent
-	private double _angle;
-	
-	@Persistent
 	private Orientation _orientation;
+		
+	public GraffitiLocationParameters(){
+	}
+
+	public GraffitiLocationParameters(Coordinates coordinates, Orientation oriantation){
+		_coordinates = coordinates;
+		_orientation = oriantation;
+	}
 	
-	@Persistent
-	private List<Double> _siftDescriptors;
+	public GraffitiLocationParameters(GraffitiLocationParameters glp){
+		if(glp.getCoordinates() != null){
+			_coordinates = new Coordinates(glp.getCoordinates().getLatitude(),
+					glp.getCoordinates().getLongitude());
+		}
+		
+		if(glp.getOrientation() != null){
+			_orientation = new Orientation(glp.getOrientation().getOrientation());
+		}
+	}
 	
 	public Orientation getOrientation() {
 		return _orientation;
@@ -28,17 +41,6 @@ public class GraffitiLocationParameters {
 	public void setOrientation(Orientation orientation) {
 		this._orientation = orientation;
 	}
-
-	public GraffitiLocationParameters(){
-		_siftDescriptors = new ArrayList<Double>();
-	}
-	
-	public GraffitiLocationParameters(Coordinates coordinates, double angle, List<Double> siftDescriptors){
-		_coordinates = coordinates;
-		_angle = angle;
-		_siftDescriptors = siftDescriptors;
-	}
-	
 	
 	public String toString(){
 		return _coordinates.toString();
@@ -50,21 +52,5 @@ public class GraffitiLocationParameters {
 
 	public void setCoordinates(Coordinates _coordinates) {
 		this._coordinates = _coordinates;
-	}
-
-	public double getAngle() {
-		return _angle;
-	}
-
-	public void setAngle(double _angle) {
-		this._angle = _angle;
-	}
-
-	public List<Double> getSiftDescriptors() {
-		return _siftDescriptors;
-	}
-
-	public void setSiftDescriptors(List<Double> _siftDescriptors) {
-		this._siftDescriptors = _siftDescriptors;
 	}
 }
