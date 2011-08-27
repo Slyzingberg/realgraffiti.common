@@ -12,19 +12,22 @@ public class Graffiti {
 	private GraffitiLocationParameters _graffitiLocationParameters;
 	
 	@NotPersistent
-	private byte[] _imageData;
-
-	public Graffiti(){
+	private byte[] _graffitiImageData;
 	
-	}
+	@NotPersistent
+	private byte[] _wallImageData;
+
+	
+	public Graffiti(){}
 	
 	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, String imageKey) {
 		_graffitiLocationParameters = graffitiLocationParameters;
 	}
 	
-	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, byte[] imageData) {
+	public Graffiti(GraffitiLocationParameters graffitiLocationParameters, byte[] imageData, byte[] wallImageData) {
 		_graffitiLocationParameters = graffitiLocationParameters;
-		_imageData = imageData;
+		_graffitiImageData = imageData;
+		_wallImageData = wallImageData;
 	}
 	
 	public Graffiti(GraffitiLocationParameters glp) {
@@ -48,11 +51,19 @@ public class Graffiti {
 	}
 	
 	public byte[] getImageData() {
-		return _imageData;
+		return _graffitiImageData;
 	}
 
 	public void setImageData(byte[] imageData) {
-		this._imageData = imageData;
+		this._graffitiImageData = imageData;
+	}
+	
+	public byte[] getWallImageData(){
+		return _wallImageData;
+	}
+	
+	public void setWallImageData(byte[] wallImageData){
+		_wallImageData = wallImageData;
 	}
 	
 	public String toString(){
