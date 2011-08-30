@@ -49,7 +49,7 @@ public class JsonConverter {
 		      throws JsonParseException 
 	      {
 			  String jsonString = json.getAsString();
-			  byte[] byteArr = Base64.decodeBase64(jsonString);
+			  byte[] byteArr = Base64.decodeBase64(jsonString.getBytes());
 			  return byteArr;
 		  }
 		}
